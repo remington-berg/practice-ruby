@@ -25,11 +25,20 @@ class Item
   end
 end
 
+class Food < Item
+  attr_reader :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
 item1 = Item.new({ name: "Fresh Mountain Air", color: "clear", price: 20, origins: "Rocky Mountain National Park", description: "This air is thin and cold!" })
 
 item2 = Item.new({ name: "L.A. Air", color: "hazy yellow", price: 1, origins: "Los Angelos", description: "For those who don't really like their lungs!" })
 
-item3 = Item.new({ name: "Galapogus Air", color: "clear with hints misty green", price: 10000, origins: "The Galapogus Islands", description: "Guarenteed to contain a turtle sneeze!" })
+item3 = Food.new({ name: "Galapogus Air", color: "clear with hints misty green", price: 10000, origins: "The Galapogus Islands", description: "Guarenteed to contain a turtle sneeze!", shelf_life: 30 })
 
 puts item1.name
 puts item1.inflation
@@ -43,3 +52,4 @@ puts item2.description
 puts item3.name
 puts item3.origins
 puts item3.description
+puts item3.shelf_life
