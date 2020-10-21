@@ -31,3 +31,7 @@ end
 
 car1 = Car.new
 bike1 = Bike.new
+puts car1.accelerate
+puts bike1.accelerate
+car1.honk_horn
+bike1.ring_bell
